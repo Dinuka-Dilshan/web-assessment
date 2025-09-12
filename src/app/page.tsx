@@ -1,8 +1,8 @@
-import getMarketNews from "@/api/get-market-news";
-import NewsCard from "@/components/news-card";
+import NewsList from "@/components/news-list";
+import NewsListLoading from "@/components/news-list/loading";
+import { Suspense } from "react";
 
 const Home = async () => {
-  const news = await getMarketNews({ category: "general" });
   return (
     <div className="flex flex-col gap-10">
       <p className="text-white text-center text-2xl">BLOTT</p>
@@ -11,11 +11,9 @@ const Home = async () => {
         from the world
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        {news.map((newsItem) => (
-          <NewsCard key={newsItem.id} newsItem={newsItem} />
-        ))}
-      </div>
+      <Suspense fallback={<NewsListLoading />}>
+        <NewsList />
+      </Suspense>
     </div>
   );
 };

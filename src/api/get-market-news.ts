@@ -23,6 +23,12 @@ const getMarketNews = async ({ category, minId }: Props) => {
   const response = await apiClient<ResponseNewsItem[]>({
     method: "GET",
     path: `news?category=${category}${minId ? `&minId=${minId}` : ""}`,
+    options: {
+      cache: "force-cache",
+      next: {
+        revalidate: 60 * 5, // 5 minutes
+      },
+    },
   });
 
   return response.map((item) => ({
