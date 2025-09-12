@@ -5,7 +5,7 @@ type Props = {
   minId?: number;
 };
 
-type NewsItem = {
+type ResponseNewsItem = {
   category: Props["category"];
   datetime: number;
   headline: string;
@@ -17,8 +17,10 @@ type NewsItem = {
   url: string;
 };
 
+export type NewsItem = Awaited<ReturnType<typeof getMarketNews>>[number];
+
 const getMarketNews = async ({ category, minId }: Props) => {
-  const response = await apiClient<NewsItem[]>({
+  const response = await apiClient<ResponseNewsItem[]>({
     method: "GET",
     path: `news?category=${category}${minId ? `&minId=${minId}` : ""}`,
   });
@@ -29,6 +31,7 @@ const getMarketNews = async ({ category, minId }: Props) => {
     date: item.datetime,
     title: item.headline,
     url: item.url,
+    id: item.id,
   }));
 };
 
