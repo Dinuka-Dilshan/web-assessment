@@ -1,8 +1,10 @@
 import NewsList from "@/components/news-list";
 import NewsListLoading from "@/components/news-list/loading";
+import { cookies } from "next/headers";
 import { Suspense } from "react";
 
 const Home = async () => {
+  cookies();
   return (
     <div className="flex flex-col gap-10">
       <p className="text-white text-center text-2xl">BLOTT</p>

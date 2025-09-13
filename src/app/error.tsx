@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const ErrorPage = ({
   error,
-  reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
