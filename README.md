@@ -12,6 +12,17 @@ This is a modern news web app built with [Next.js](https://nextjs.org), featurin
 - **First news card** highlighted with a special design
 - **TypeScript** and strict linting
 
+## Environment Variables
+
+Before running the project, create a `.env` file in the root directory with the following variables:
+
+```env
+API_KEY=your_finnhub_api_key
+API_BASE_URL=https://finnhub.io/api/v1/
+```
+
+Replace `your_finnhub_api_key` with your actual API key from [Finnhub](https://finnhub.io/).
+
 ## Getting Started
 
 Install dependencies:
@@ -24,7 +35,7 @@ yarn install
 npm install
 ```
 
-Run the development server:
+### Run the Development Server
 
 ```bash
 pnpm dev
@@ -34,7 +45,7 @@ yarn dev
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
+The app will be available at [http://localhost:3000](http://localhost:3000).
 
 ## Project Structure
 
