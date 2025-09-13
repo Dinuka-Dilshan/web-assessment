@@ -1,4 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BLOTT News Web Assessment
+
+This is a modern news web app built with [Next.js](https://nextjs.org), featuring server components, suspense loading states, and custom error handling. It fetches and displays the latest market news in a responsive grid layout.
+
+## Features
+
+- **Next.js 15** with App Router and Server Components
+- **Tailwind CSS** for styling
+- **Suspense** loading state for news list
+- **Custom error page** with helpful feedback
+- **Responsive grid** for news cards
+- **First news card** highlighted with a special design
+- **TypeScript** and strict linting
+
+## Getting Started
+
+Install dependencies:
+
+```bash
+pnpm install
+# or
+yarn install
+# or
+npm install
+```
+
+Run the development server:
+
+```bash
+pnpm dev
+# or
+yarn dev
+# or
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+## Project Structure
+
+- `src/app/page.tsx` – Home page, renders the news list with suspense loading
+- `src/components/news-list/` – News list and loading skeleton
+- `src/components/news-card/` – News card components (first and regular)
+- `src/app/error.tsx` – Custom error boundary page
+- `src/api/get-market-news.ts` – News fetching logic
+
+## Customization
+
+- **Loading State:** The news list shows a skeleton loader while fetching data.
+- **Error Handling:** If an error occurs, a user-friendly error page is displayed.
+
+## Scripts
+
+- `pnpm dev` – Start development server
+- `pnpm build` – Build for production
+- `pnpm start` – Start production server
+- `pnpm lint` – Run ESLint
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- Tailwind CSS 4
+- TypeScript 5
+
+---
+
+This project was bootstrapped with `create-next-app` and extended for a modern, robust news experience.
 
 ## Getting Started
 
